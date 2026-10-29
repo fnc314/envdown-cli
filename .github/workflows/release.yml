@@ -10,19 +10,19 @@ jobs:
       matrix:
         include:
           - os: macos-14
-            module: cli-mac
+            module: envdown-cli-mac
             target: macos-arm64
             ext: ""
           - os: macos-13
-            module: cli-mac
+            module: envdown-cli-mac
             target: macos-x64
             ext: ""
           - os: ubuntu-latest
-            module: cli-linux
+            module: envdown-cli-linux
             target: linux-x64
             ext: ""
           - os: windows-latest
-            module: cli-windows
+            module: envdown-cli-windows
             target: mingw-x64
             ext: ".exe"
     runs-on: ${{ matrix.os }}
@@ -31,7 +31,7 @@ jobs:
         shell: bash
     steps:
       - name: Checkout Source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Build Native Binary
         run: kotlin build -m ${{ matrix.module }}
@@ -60,7 +60,7 @@ jobs:
           fi
 
       - name: Upload to GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             envdown-cli-${{ matrix.target }}.tar.gz
@@ -71,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Tap Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: fnc314/homebrew-tools
           token: ${{ secrets.TAP_GITHUB_TOKEN }}
