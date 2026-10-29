@@ -1,8 +1,11 @@
 name: Publish Release and Update Homebrew
 
 on:
+  workflow_dispatch:
   release:
-    types: [published]
+    types: [
+      published,
+    ]
 
 jobs:
   build-and-upload:
