@@ -1,0 +1,17 @@
+product:
+  platforms: [ jvm, linuxArm64, linuxX64, macosArm64, mingwX64 ]
+  type: kmp/lib
+
+settings:
+  jvm:
+    jdk:
+      version: 26
+    release: 26
+  kotlin:
+    apiVersion: 2.4
+    explicitApi: "strict"
+    languageVersion: 2.4
+    version: 2.4.21
+
+test-dependencies@jvm:
+  - $kotlin.test.junit5

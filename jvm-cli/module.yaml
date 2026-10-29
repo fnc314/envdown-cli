@@ -1,0 +1,18 @@
+#file: noinspection AmperEmptyModuleInspection
+dependencies:
+  - ../shared
+
+product:
+  type: jvm/app
+
+settings:
+  jvm:
+    jdk:
+      version: 26
+    mainClass: MainKt
+    release: 26
+  kotlin:
+    apiVersion: 2.4
+    explicitApi: "strict"
+    languageVersion: 2.4
+    version: 2.4.21

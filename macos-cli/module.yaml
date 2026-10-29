@@ -1,0 +1,7 @@
+#file: noinspection AmperEmptyModuleInspection
+dependencies:
+  - ../shared
+
+product:
+  platforms: [ macosArm64 ]
+  type: macos/app
