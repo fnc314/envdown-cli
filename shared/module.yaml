@@ -1,3 +1,10 @@
+dependencies:
+  - $libs.kotlinx.coroutines
+  - $libs.kotlinx.io
+
+dependencies@jvm:
+  - $kotlin.reflect
+
 product:
   platforms: [ jvm, linuxArm64, linuxX64, macosArm64, mingwX64 ]
   type: kmp/lib
@@ -12,6 +19,20 @@ settings:
     explicitApi: "strict"
     languageVersion: 2.4
     version: 2.4.21
+  publishing:
+    group: "dev.fnc314.tools.envdown"
+    artifactId: "envdown-cli"
+    version: 0.0.1
+    publishSources: true
+    pom:
+      name: "EnvDown CLI"
+      description: "EnvDown CLI"
+      developers:
+        - "Franco N. Colaizzi"
+      scm:
+        url: "https://www.github.com/fnc314/envdown-cli"
+      url: "https://www.fnc314.dev"
+
 
 test-dependencies@jvm:
   - $kotlin.test.junit5

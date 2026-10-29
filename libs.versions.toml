@@ -1,0 +1,9 @@
+[versions]
+  kotlin = "2.4.21"
+  coroutines = "1.11.0"
+  io = "0.3.3"
+
+[libraries]
+  kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+  kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+  kotlinx-io = { group = "org.jetbrains.kotlinx", name = "kotlinx-io-core", version.ref = "io" }
