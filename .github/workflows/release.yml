@@ -36,6 +36,9 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v7
 
+      - name: Set up Kotlin Toolchain (with caching)
+        uses: RazerTexz/setup-kotlin-toolchain@v1
+
       - name: Build Native Binary
         run: kotlin build -m ${{ matrix.module }}
 
