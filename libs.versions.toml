@@ -2,8 +2,10 @@
   kotlin = "2.4.21"
   coroutines = "1.11.0"
   io = "0.3.3"
+  cinterop = ""
 
 [libraries]
   kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
   kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
   kotlinx-io = { group = "org.jetbrains.kotlinx", name = "kotlinx-io-core", version.ref = "io" }
+  kotlinx-cinterop = { group = "org.jetbrains.kotlinx", name = "kotlinx-cinterop", version.ref = "cinterop" }

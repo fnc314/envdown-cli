@@ -1,7 +1,0 @@
-#file: noinspection AmperEmptyModuleInspection
-dependencies:
-  - ../shared
-
-product:
-  platforms: [ linuxArm64, linuxX64 ]
-  type: linux/app

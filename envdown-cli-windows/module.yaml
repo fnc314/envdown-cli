@@ -1,0 +1,6 @@
+product: windows/app
+dependencies:
+  - //envdown-cli-core
+settings:
+  native:
+    entryPoint: dev.fnc314.tools.envdown.cli.windows.main

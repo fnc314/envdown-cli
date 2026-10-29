@@ -1,0 +1,6 @@
+product: linux/app
+dependencies:
+  - //envdown-cli-core
+settings:
+  native:
+    entryPoint: dev.fnc314.tools.envdown.cli.linux.main

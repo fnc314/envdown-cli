@@ -1,7 +1,0 @@
-#file: noinspection AmperEmptyModuleInspection
-dependencies:
-  - ../shared
-
-product:
-  platforms: [ mingwX64 ]
-  type: windows/app

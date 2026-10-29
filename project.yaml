@@ -1,6 +1,5 @@
 modules:
-  - jvm-cli
-  - linux-cli
-  - macos-cli
-  - shared
-  - windows-cli
+  - envdown-cli-core
+  - envdown-cli-linux
+  - envdown-cli-mac
+  - envdown-cli-windows
