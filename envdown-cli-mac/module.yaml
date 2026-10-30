@@ -1,6 +1,9 @@
 product: macos/app
+
 dependencies:
   - //envdown-cli-core
+  - $libs.kotlin.stdlib
+
 settings:
   native:
     entryPoint: dev.fnc314.tools.envdown.cli.mac.main

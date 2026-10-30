@@ -1,6 +1,13 @@
 product: linux/app
+
 dependencies:
   - //envdown-cli-core
+
 settings:
   native:
     entryPoint: dev.fnc314.tools.envdown.cli.linux.main
+  publishing:
+    artifactId: "envdown-cli-linux"
+    group: "dev.fnc314.tools.envdown"
+    version: "0.0.1"
+    enabled: true

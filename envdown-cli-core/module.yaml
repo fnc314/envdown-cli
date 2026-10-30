@@ -7,5 +7,18 @@ product:
     macosX64,
     mingwX64,
   ]
+
 dependencies:
   - $libs.kotlinx.io
+  - $libs.kotlin.stdlib
+
+settings:
+  kotlin:
+    apiVersion: "2.4"
+    languageVersion: "2.4"
+    version: "2.4.21"
+  publishing:
+    enabled: true
+    artifactId: "envdown-cli-core"
+    group: "dev.fnc314.tools.envdown"
+    version: "0.0.1"

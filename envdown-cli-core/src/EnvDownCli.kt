@@ -9,32 +9,75 @@ import kotlin.system.exitProcess
 fun runCli(args: Array<String>, getEnv: (String) -> String?) {
     var strictMode = false
     var filePath: String? = null
+    var outputFile: String? = null
 
-    for (arg in args) {
-        if (arg == "--strict") {
-            strictMode = true
-        } else if (!arg.startsWith("-")) {
-            filePath = arg
+    args.forEachIndexed { indx, arg ->
+        when (arg) {
+            "--strict" -> {
+                strictMode = true
+            }
+            "--output", "-o" -> {
+                outputFile = args[indx + 1]
+            }
+            else -> {
+                if (!arg.startsWith("-")) {
+                    filePath = arg
+                }
+            }
         }
     }
 
     if (filePath == null) {
-        println("Usage: envdown-cli [--strict] <file.envdown>")
+        println("Usage: envdown-cli [--strict] [--output|-o <file.md>] <file.envdown>")
         exitProcess(1)
     }
 
     val path = Path(filePath)
     if (!SystemFileSystem.exists(path)) {
         println("Error: File '$filePath' not found.")
-        exitProcess(1)
+        exitProcess(2)
     }
 
     try {
         val input = SystemFileSystem.source(path).buffered().readString()
         val output = processEnvDown(input, strictMode, getEnv)
-        println(output)
+        if (outputFile != null) {
+            output.writeToFile(outputFile = outputFile)
+        } else {
+            println(output)
+        }
     } catch (e: Exception) {
         println(e.message)
-        exitProcess(1)
+        exitProcess(255)
     }
+}
+
+private fun String.writeToFile(outputFile: String) {
+    if (!outputFile.endsWith("md")) {
+        println("Error: output file is not .md")
+        exitProcess(3)
+    }
+    val outputPathPath = Path(outputFile).also {
+        if (SystemFileSystem.exists(it)) {
+            SystemFileSystem.delete(it, true)
+        }
+        if (it.parent != null) {
+            SystemFileSystem.createDirectories(
+                it.parent!!,
+            )
+        }
+    }
+    SystemFileSystem
+        .sink(
+            outputPathPath,
+            true
+        )
+        .buffered()
+        .use { sink ->
+            sink.write(
+                encodeToByteArray(),
+                0,
+                length
+            )
+        }
 }
