@@ -1,5 +1,5 @@
 apply:
-  - //templates/kotlin.module-template.yaml
+  - //templates/jvm-kotlin.module-template.yaml
 
 settings:
   publishing:
