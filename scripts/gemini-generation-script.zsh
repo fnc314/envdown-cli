@@ -138,7 +138,7 @@ import dev.fnc314.tools.envdown.cli.core.runCli
 import kotlinx.cinterop.toKString
 import platform.posix.getenv
 
-fun main(args: Array<String>) {
+public fun main(args: Array<String>) {
     runCli(args) { key -> getenv(key)?.toKString() }
 }
 EOF
@@ -160,7 +160,7 @@ import dev.fnc314.tools.envdown.cli.core.runCli
 import kotlinx.cinterop.toKString
 import platform.posix.getenv
 
-fun main(args: Array<String>) {
+public fun main(args: Array<String>) {
     runCli(args) { key -> getenv(key)?.toKString() }
 }
 EOF
@@ -182,7 +182,7 @@ import dev.fnc314.tools.envdown.cli.core.runCli
 import kotlinx.cinterop.toKString
 import platform.posix.getenv
 
-fun main(args: Array<String>) {
+public fun main(args: Array<String>) {
     runCli(args) { key -> getenv(key)?.toKString() }
 }
 EOF

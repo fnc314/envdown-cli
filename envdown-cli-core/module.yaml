@@ -1,3 +1,6 @@
+apply:
+  - //templates/publishing.module-template.yaml
+
 product:
   type: kmp/lib
   platforms: [
@@ -18,7 +21,4 @@ settings:
     languageVersion: "2.4"
     version: "2.4.21"
   publishing:
-    enabled: true
     artifactId: "envdown-cli-core"
-    group: "dev.fnc314.tools.envdown"
-    version: "0.0.1"

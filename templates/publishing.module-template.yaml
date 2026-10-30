@@ -1,0 +1,26 @@
+apply:
+  - //templates/kotlin.module-template.yaml
+
+settings:
+  publishing:
+    enabled: true
+    group: "dev.fnc314.tools.envdown"
+    version: "0.0.1"
+    publishSources: true
+    signArtifacts: true
+    pom:
+      developers:
+        - id: "fnc314"
+          name: "Franco N. Colaizzi"
+          email: "fnc314@gmail.com"
+      description: "Envdown CLI"
+      scm:
+        url: "https://github.com/fnc314/envdown-cli"
+      url: "https://www.fnc314.dev/tools/envdown-cli"
+      name: "Envdown CLI"
+      licenses:
+        - name: "MIT License"
+          url: "https://opensource.org/licenses/MIT"
+    mavenCentral:
+      enabled: true
+      publishingMode: auto

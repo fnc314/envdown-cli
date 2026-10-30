@@ -1,0 +1,11 @@
+settings:
+  jvm:
+    jdk:
+      version: 26
+    release: 26
+  kotlin:
+    version: "2.4.21"
+    languageVersion: "2.4"
+    apiVersion: "2.4"
+    allWarningsAsErrors: false
+    explicitApi: warning

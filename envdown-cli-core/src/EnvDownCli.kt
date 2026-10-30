@@ -6,7 +6,7 @@ import kotlinx.io.files.SystemFileSystem
 import kotlinx.io.readString
 import kotlin.system.exitProcess
 
-fun runCli(args: Array<String>, getEnv: (String) -> String?) {
+public fun runCli(args: Array<String>, getEnv: (String) -> String?) {
     var strictMode = false
     var filePath: String? = null
     var outputFile: String? = null

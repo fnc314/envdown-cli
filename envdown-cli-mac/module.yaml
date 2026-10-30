@@ -1,3 +1,6 @@
+apply:
+  - //templates/publishing.module-template.yaml
+
 product: macos/app
 
 dependencies:
@@ -7,3 +10,5 @@ dependencies:
 settings:
   native:
     entryPoint: dev.fnc314.tools.envdown.cli.mac.main
+  publishing:
+    artifactId: "envdown-cli-mac"

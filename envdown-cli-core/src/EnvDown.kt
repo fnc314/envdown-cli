@@ -2,7 +2,7 @@ package dev.fnc314.tools.envdown.cli.core
 
 private val unescapePattern = Regex("\\\\\\$\\{env\\.")
 
-fun processEnvDown(
+public fun processEnvDown(
     input: String, 
     strictMode: Boolean = false,
     getEnv: (String) -> String?

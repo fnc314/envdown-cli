@@ -1,6 +1,13 @@
+apply:
+  - //templates/publishing.module-template.yaml
+
 product: windows/app
+
 dependencies:
   - //envdown-cli-core
+
 settings:
   native:
     entryPoint: dev.fnc314.tools.envdown.cli.windows.main
+  publishing:
+    artifactId: "envdown-cli-windows"
