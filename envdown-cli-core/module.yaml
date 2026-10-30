@@ -16,9 +16,5 @@ dependencies:
   - $libs.kotlin.stdlib
 
 settings:
-  kotlin:
-    apiVersion: "2.4"
-    languageVersion: "2.4"
-    version: "2.4.21"
   publishing:
     artifactId: "envdown-cli-core"
